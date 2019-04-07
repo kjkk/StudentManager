@@ -31,11 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'student_profile',
-    'total_attendance',
-    'teacher_profile',
+    'class_info',
+    'home',
+    'profiles',
     'attendance_app',
-    'daily_attendance',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
