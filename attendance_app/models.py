@@ -7,13 +7,13 @@ from datetime import datetime
 class total_attendance(models.Model):
     student_id = models.ForeignKey(StudentProfile, on_delete = models.CASCADE)
     subject_id = models.ForeignKey(Subjects, on_delete = models.CASCADE)
-    total_classes = models.IntegerField(max_length=3)
-    classes_attended  = models.IntegerField(max_length=2)
+    total_classes = models.IntegerField()
+    classes_attended  = models.IntegerField()
 
     def __str__(self):
         return self.student_id
 
-    
+
 class Attendance(models.Model):
     date = models.DateTimeField(default = datetime.now, blank = True )
     slot1 = models.CharField(max_length = 20)

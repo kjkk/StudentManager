@@ -5,15 +5,15 @@ from django.db import models
 class Classes(models.Model):
     class_id = models.CharField(max_length = 20)
     batch = models.CharField(max_length = 20)
-    sem = models.IntegerField(max_length=3)
+    sem = models.IntegerField()
     branch = models.CharField(max_length = 20)
     section = models.CharField(max_length = 20)
-    students = models.IntegerField(max_length = 20)
+    students = models.IntegerField()
 
     def __str__(self):
         return self.class_id
 
-    
+
 class TimeTable(models.Model):
     day = models.CharField(max_length = 20)
     slot1 = models.CharField(max_length = 20)
@@ -27,6 +27,3 @@ class TimeTable(models.Model):
 
     def __str__(self):
         return self.class_id
-
-
-    
