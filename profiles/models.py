@@ -28,7 +28,7 @@ class TeacherProfile(models.Model):
     dob = models.DateTimeField(max_length = 200)
     joining_year = models.DateTimeField()
     address = models.TextField(max_length = 200)
-    is_cc = models.ForeignKey(Classes, null=True, on_delete= models.CASCADE)
+    is_cc = models.ForeignKey(Classes, blank=True, null=True, on_delete= models.CASCADE)
     is_hod = models.BooleanField(default=False)
 
     def __str__(self):
