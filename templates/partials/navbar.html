@@ -41,16 +41,16 @@
                             <li><a title="All Students" href="students_list.html"><span class="mini-sub-pro">All Students</span></a></li>
                             <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Student</span></a></li>
                             <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Student</span></a></li>
-                            <li><a title="Students Profile" href="about_student.html"><span class="mini-sub-pro">Student Profile</span></a></li>
+                            <li><a title="Students Profile" href="{% url 'student_profile' %}"><span class="mini-sub-pro">Student Profile</span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Faculties</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Students" href="faculty_list.html"><span class="mini-sub-pro">All Faculty</span></a></li>
-                            <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">Add Faculty</span></a></li>
+                            <li><a title="Add Students" href="{% url 'addTeacher' %}"><span class="mini-sub-pro">Add Faculty</span></a></li>
                             <li><a title="Edit Students" href="edit-student.html"><span class="mini-sub-pro">Edit Faculty</span></a></li>
-                            <li><a title="Students Profile" href="about_faculty.html"><span class="mini-sub-pro">Faculty Profile</span></a></li>
+                            <li><a title="Students Profile" href="{% url 'teacher_profile' %}"><span class="mini-sub-pro">Faculty Profile</span></a></li>
                         </ul>
                     </li>
                     <li>

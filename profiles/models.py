@@ -23,11 +23,13 @@ class TeacherProfile(models.Model):
     first_name = models.CharField(max_length = 30)
     last_name = models.CharField(max_length = 30)
     designation = models.CharField(max_length = 30)
+    department = models.CharField(max_length = 30)
     teacher_id = models.CharField(max_length = 20)
     dob = models.DateTimeField(max_length = 200)
     joining_year = models.DateTimeField()
     address = models.TextField(max_length = 200)
-    cc = models.ForeignKey(Classes, blank = True, on_delete= models.CASCADE)
+    is_cc = models.ForeignKey(Classes, null=True, on_delete= models.CASCADE)
+    is_hod = models.BooleanField(default=False)
 
     def __str__(self):
         return self.teacher_id
