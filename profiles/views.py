@@ -9,9 +9,19 @@ def student_profile(req):
 def teacher_profile(req):
     return render(req,  'profiles/about_faculty.html')
 
-#This function renders to the HOD profile page
-def HOD_profile(req):
-    return render(req,  'profiles/about_faculty.html')
 
 def addTeacher(req):
-    return render(req, 'profiles/add_teacher.html')
+
+    form = AddTeacher()
+
+    print(form)
+
+    if req.method == 'POST':
+        form = AddTeacher(req.POST)
+
+        if form.is_valid():
+            teacher = form.save(commit=False)
+            teacher.save
+            return redirect('addTeacher')
+
+    return render(req, 'profiles/add_teacher.html', {'form': form})

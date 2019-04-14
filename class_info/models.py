@@ -26,4 +26,4 @@ class TimeTable(models.Model):
     class_id = models.ForeignKey(Classes, on_delete = models.CASCADE)
 
     def __str__(self):
-        return self.class_id
+        return self.day

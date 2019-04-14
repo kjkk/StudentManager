@@ -13,7 +13,7 @@ class StudentProfile(models.Model):
     address = models.TextField(max_length = 200)
     dob = models.DateTimeField()
     contact_self = models.CharField(max_length = 12)
-    email = models.CharField(max_length = 12)
+    email = models.CharField(max_length = 30)
     contact_father = models.CharField(max_length = 12)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Subjects(models.Model):
     subject_id = models.CharField(max_length = 30)
     subject_name = models.CharField(max_length = 50)
     sem = models.CharField(max_length = 50)
-    teacher_id = models.CharField(max_length = 20)
+    teacher_id = models.ForeignKey(TeacherProfile, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.subject_id
