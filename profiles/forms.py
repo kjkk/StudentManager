@@ -1,5 +1,8 @@
 from django import forms
 from profiles.models import TeacherProfile
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+
 
 class AddTeacher(forms.ModelForm):
 
@@ -59,3 +62,12 @@ class AddTeacher(forms.ModelForm):
                 'placeholder': 'is_hod',
                 'class': 'form-control'
             })
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Username', 'class': 'form-control'}))
+    password = forms.CharField(max_length=200, required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-control'}))
+
+    class Meta:
+        model = User
+        fields = ('username', 'password')

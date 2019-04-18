@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Classes(models.Model):
-    class_id = models.CharField(max_length = 20)
+    class_id = models.CharField(max_length = 20, unique=True)
     batch = models.CharField(max_length = 20)
     sem = models.IntegerField()
     branch = models.CharField(max_length = 20)
