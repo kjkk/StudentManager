@@ -35,7 +35,7 @@ def login(request):
     """
     View for user login.
     """
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
     #     user = request.user
     #     print(user.id)
         return redirect('home')
@@ -54,4 +54,4 @@ def login(request):
                 return redirect('home')
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'profiles/login.html', {'form': form})
